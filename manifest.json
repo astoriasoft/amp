@@ -4,7 +4,7 @@
   "display": "standalone",
   "background_color": "#fff",
   "theme_color": "#0379C4",
-  "description": "Accelerated Mobile Pages project test app.",
+  "description": "Accelerated Mobile Pages project test app",
   "start_url": "https://astoriasoft.github.io/amp/index.html",
   "icons": [
     {
