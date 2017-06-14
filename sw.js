@@ -24,6 +24,7 @@
 var dataCacheName = 'pwaTestData-v1';
 var cacheName = 'pwaTestfinal-1';
 var filesToCache = [    
+    'https://astoriasoft.github.io/amp/',
     'https://astoriasoft.github.io/amp/index.html',
     'https://astoriasoft.github.io/amp/scripts/main.js',
     'https://astoriasoft.github.io/amp/styles/index.css',    
