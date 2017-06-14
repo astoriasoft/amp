@@ -27,6 +27,7 @@ var filesToCache = [
     'https://astoriasoft.github.io/amp/',
     'https://astoriasoft.github.io/amp/index.html',
     'https://astoriasoft.github.io/amp/scripts/main.js',
+    'https://astoriasoft.github.io/amp/manifest.json',
     'https://astoriasoft.github.io/amp/styles/index.css',    
     'https://astoriasoft.github.io/amp/images/icon.png',
     'https://astoriasoft.github.io/amp/images/badge.png',
