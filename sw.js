@@ -74,7 +74,7 @@ self.addEventListener('activate', function (e) {
                         'Fetch failed; returning offline page instead.',
                         exception
                     );
-                    return caches.open(OFFLINE_CACHE).then(function (cache) {
+                    return caches.open(filesToCache).then(function (cache) {
                         return cache.match('/');
                     });
                 })
