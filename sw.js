@@ -28,7 +28,15 @@ var filesToCache = [
     'https://astoriasoft.github.io/amp/index.html',
     'https://astoriasoft.github.io/amp/scripts/main.js',
     'https://astoriasoft.github.io/amp/styles/index.css',    
-    'https://astoriasoft.github.io/amp/images/icon.png'
+    'https://astoriasoft.github.io/amp/images/icon.png',
+    'https://astoriasoft.github.io/amp/images/badge.png',
+    'https://astoriasoft.github.io/amp/images/static/48.png',
+    'https://astoriasoft.github.io/amp/images/static/72.png',
+    'https://astoriasoft.github.io/amp/images/static/96.png',
+    'https://astoriasoft.github.io/amp/images/static/144.png',
+    'https://astoriasoft.github.io/amp/images/static/168.png',
+    'https://astoriasoft.github.io/amp/images/static/192.png',
+    'https://astoriasoft.github.io/amp/images/static/any.svg'
 ];
 
 self.addEventListener('install', function (e) {
