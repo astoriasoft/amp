@@ -24,19 +24,20 @@
 var dataCacheName = 'pwaTestData-v1';
 var cacheName = 'pwaTestfinal-1';
 var filesToCache = [    
-    'https://astoriasoft.github.io/amp/index.html',
-    'https://astoriasoft.github.io/amp/scripts/main.js',
-    'https://astoriasoft.github.io/amp/manifest.json',
-    'https://astoriasoft.github.io/amp/styles/index.css',    
-    'https://astoriasoft.github.io/amp/images/icon.png',
-    'https://astoriasoft.github.io/amp/images/badge.png',
-    'https://astoriasoft.github.io/amp/images/static/48.png',
-    'https://astoriasoft.github.io/amp/images/static/72.png',
-    'https://astoriasoft.github.io/amp/images/static/96.png',
-    'https://astoriasoft.github.io/amp/images/static/144.png',
-    'https://astoriasoft.github.io/amp/images/static/168.png',
-    'https://astoriasoft.github.io/amp/images/static/192.png',
-    'https://astoriasoft.github.io/amp/images/static/any.svg'
+    '/amp/',
+    '/amp/index.html',
+    '/amp/scripts/main.js',
+    '/amp/manifest.json',
+    '/amp/styles/index.css',    
+    '/amp/images/icon.png',
+    '/amp/images/badge.png',
+    '/amp/images/static/48.png',
+    '/amp/images/static/72.png',
+    '/amp/images/static/96.png',
+    '/amp/images/static/144.png',
+    '/amp/images/static/168.png',
+    '/amp/images/static/192.png',
+    '/amp/images/static/any.svg'
 ];
 
 self.addEventListener('install', function (e) {
@@ -66,29 +67,12 @@ self.addEventListener('activate', function (e) {
         event.respondWith(
             caches.match(event.request)
                 .then(function (response) {
-                    return response || fetchAndCache(event.request);
+                    return response || fetch(event.request);
                 })
         );
     });
 
-    function fetchAndCache(url) {
-        return fetch(url)
-            .then(function (response) {
-                // Check if we received a valid response
-                if (!response.ok) {
-                    throw Error(response.statusText);
-                }
-                return caches.open(cacheName)
-                    .then(function (cache) {
-                        cache.put(url, response.clone());
-                        return response;
-                    });
-            })
-            .catch(function (error) {
-                console.log('Request failed:', error);
-                // You could return a custom offline 404 page here
-            });
-    }
+    
 
     /*
      * Fixes a corner case in which the app wasn't returning the latest data.
@@ -110,8 +94,8 @@ self.addEventListener('push', function (event) {
     const title = 'Push Codelab';
     const options = {
         body: 'Yay it works.',
-        icon: 'images/icon.png',
-        badge: 'images/badge.png'
+        icon: '/amp/images/icon.png',
+        badge: '/amp/images/badge.png'
     };
 
     event.waitUntil(self.registration.showNotification(title, options));
