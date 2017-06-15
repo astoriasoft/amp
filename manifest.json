@@ -5,7 +5,7 @@
   "background_color": "#fff",
   "theme_color": "#0379C4",
   "description": "Accelerated Mobile Pages project test app",
-  "start_url": "/amp/?home=true",
+  "start_url": "/amp/",
   "icons": [
     {
       "src": "/amp/images/static/48.png",
