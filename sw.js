@@ -64,33 +64,32 @@ self.addEventListener('activate', function (e) {
     );
 
     self.addEventListener('fetch', function (event) {
-        if (event.request.mode == 'navigate') {
-            console.log('Handling fetch event for', event.request.url);
-            console.log(event.request);
-            event.respondWith(
-                fetch(event.request).catch(function (exception) {
-                    // The `catch` is only triggered if `fetch()` throws an exception,
-                    // which most likely happens due to the server being unreachable.
-                    console.error(
-                        'Fetch failed; returning offline page instead.',
-                        exception
-                    );
-                    return caches.open(filesToCache).then(function (cache) {
-                        return cache.match('/');
-                    });
+        event.respondWith(
+            caches.match(event.request)
+                .then(function (response) {
+                    return response || fetchAndCache(event.request);
                 })
-            );
-        } else {
-            // It’s not a request for an HTML document, but rather for a CSS or SVG
-            // file or whatever…
-            event.respondWith(
-                caches.match(event.request).then(function (response) {
-                    return response || fetch(event.request);
-                })
-            );
-        }
-
+        );
     });
+
+    function fetchAndCache(url) {
+        return fetch(url)
+            .then(function (response) {
+                // Check if we received a valid response
+                if (!response.ok) {
+                    throw Error(response.statusText);
+                }
+                return caches.open(cacheName)
+                    .then(function (cache) {
+                        cache.put(url, response.clone());
+                        return response;
+                    });
+            })
+            .catch(function (error) {
+                console.log('Request failed:', error);
+                // You could return a custom offline 404 page here
+            });
+    }
 
     /*
      * Fixes a corner case in which the app wasn't returning the latest data.
