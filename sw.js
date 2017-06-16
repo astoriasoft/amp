@@ -14,6 +14,7 @@ var resourcesToCache = [
     '/pwa/images/static/144.png',
     '/pwa/images/static/168.png',
     '/pwa/images/static/192.png',
+    '/pwa/images/static/512.png',
     '/pwa/images/static/any.svg'
 ];
 

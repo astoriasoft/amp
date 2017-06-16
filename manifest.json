@@ -38,6 +38,11 @@
       "type": "image/png"
     },
     {
+      "src": "/pwa/images/static/512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
       "src": "/pwa/images/static/any.svg",
       "sizes": "any"
     }
