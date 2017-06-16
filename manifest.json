@@ -1,10 +1,10 @@
 {
-  "name": "AMP Test App",
-  "short_name": "AMP",
+  "name": "PWA Test App",
+  "short_name": "PWA",
   "display": "standalone",
   "background_color": "#fff",
   "theme_color": "#0379C4",
-  "description": "Accelerated Mobile Pages project test app",
+  "description": "Progressive Web App project test app",
   "start_url": "/amp/",
   "icons": [
     {
