@@ -3,18 +3,18 @@
 var dataCacheName = 'pwaTestData-v1';
 var CACHE_NAME = 'pwaTestfinal-1';
 var resourcesToCache = [    
-    '/amp/',    
-    '/amp/scripts/main.js',    
-    '/amp/styles/index.css',    
-    '/amp/images/icon.png',
-    '/amp/images/badge.png',
-    '/amp/images/static/48.png',
-    '/amp/images/static/72.png',
-    '/amp/images/static/96.png',
-    '/amp/images/static/144.png',
-    '/amp/images/static/168.png',
-    '/amp/images/static/192.png',
-    '/amp/images/static/any.svg'
+    '/pwa/',    
+    '/pwa/scripts/main.js',    
+    '/pwa/styles/index.css',    
+    '/pwa/images/icon.png',
+    '/pwa/images/badge.png',
+    '/pwa/images/static/48.png',
+    '/pwa/images/static/72.png',
+    '/pwa/images/static/96.png',
+    '/pwa/images/static/144.png',
+    '/pwa/images/static/168.png',
+    '/pwa/images/static/192.png',
+    '/pwa/images/static/any.svg'
 ];
 
 self.addEventListener('install', function (e) {
@@ -63,8 +63,8 @@ self.addEventListener('push', function (event) {
     const title = 'Push Codelab';
     const options = {
         body: 'Yay it works.',
-        icon: '/amp/images/icon.png',
-        badge: '/amp/images/badge.png'
+        icon: '/pwa/images/icon.png',
+        badge: '/pwa/images/badge.png'
     };
 
     event.waitUntil(self.registration.showNotification(title, options));
